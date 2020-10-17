@@ -27,6 +27,7 @@ exports.up = function(knex) {
                 .notNullable()
         })
         .createTable("savedArticles", table => {
+            table.increments();
             table.integer('user_id')
                 .unsigned()
                 .notNullable()
