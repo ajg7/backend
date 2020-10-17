@@ -76,7 +76,7 @@ exports.seed = function (knex) {
       title: "New Dating App for Fitness Enthusiasts",
       author: "Josh Harold",
       summary: "Fitness degree in philosophy exploring the city exploring the city. Joking around introvert I'm a good listener whatever topic is on NPR adventures, art school listening to music exploring the city seeing as many countries as possible open-minded.",
-      image: null,
+      image: "https://picsum.photos/seed/picsum/200/300",
       category: "Culture",
       rank: 2
     },
