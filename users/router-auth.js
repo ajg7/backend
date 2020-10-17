@@ -14,7 +14,7 @@ function getJwt(user) {
     const options = {
         expiresIn: "5h"
     }
-    return jwt.sign(payload, secret, option);
+    return jwt.sign(payload, secret, options);
 }
 
 router.post("/signup", (request, response) => {
@@ -39,6 +39,7 @@ router.post("/login", (request, response) => {
         Users.findBy({ username: username})
             .then(([user]) => {
                 if(user && bcryptjs.compareSync(password, user.password)) {
+                    const token = getJwt(user);
                     response.status(200).json({ message: "Welcome!", token})
                 } else {
                     response.status(400).json({ message: "Invalid Characters" })

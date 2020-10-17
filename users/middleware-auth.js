@@ -7,13 +7,13 @@ module.exports = (request, response, next) => {
     if(token) {
         jwt.verify(token, secrets.jwtSecret, (error, decodedToken) => {
             if(error) {
-                response.status(401).json({ you : "invalid" })
+                response.status(401).json({ message : "forbidden path" })
             } else {
                 request.jwt = decodedToken;
                 next();
             }
         })
     } else {
-        response.status(401).json({ you: "you shall not pass!"})
+        response.status(401).json({ message: "you shall not pass!" })
     }
 } 

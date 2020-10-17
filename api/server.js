@@ -2,14 +2,16 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 
-const authenticate = require("../users/middleware-auth");
+//Routers
 const ArticleRouter = require("../articles/router-articles");
 const UserRouter = require ("../users/router-auth");
 // const SavedArticleRouter = require("../savedArticles/router-savedArticles");
 
+//Middleware
+const authenticate = require("../users/middleware-auth");
+
+
 const server = express();
-
-
 server.use(helmet());
 server.use(cors());
 server.use(express.json());
