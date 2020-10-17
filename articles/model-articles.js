@@ -1,8 +1,7 @@
 module.exports = {
     find,
     findById,
-    // add,
-    // update,
+    update,
     // remove
 }
 
@@ -13,5 +12,9 @@ function find() {
 }
 
 function findById(id) {
-    return db("articles").where({id}).first();
+    return db("articles").where({ id });
+}
+
+function update(id, changes) {
+    return db("articles").where({id}).update(changes)
 }
