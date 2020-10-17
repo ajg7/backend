@@ -18,7 +18,18 @@ function getJwt(user) {
     return jwt.sign(payload, secret, options);
 }
 
-router.post("/signup", (request, response) => {
+function validateUser(request, response, next) {
+    // do your magic!
+    if (request.body === undefined) {
+        response.status(400).json({ message: "missing user data" });
+    } else if (request.body.username === undefined) {
+        response.status(400).json({ message: "missing required username field" })
+    } else {
+        next();
+    }
+}
+
+router.post("/signup", validateUser, (request, response) => {
     const credentials = request.body;
     const rounds = process.env.BCRYPT_ROUNDS || 7;
     const hash = bcryptjs.hashSync(credentials.password, rounds);
@@ -33,7 +44,7 @@ router.post("/signup", (request, response) => {
         })
 })
 
-router.post("/login", (request, response) => {
+router.post("/login", validateUser, (request, response) => {
     const { username, password } = request.body;
     if(isValid(request.body)) {
         Users.findBy({ username: username})
