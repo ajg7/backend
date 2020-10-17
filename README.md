@@ -3,6 +3,7 @@
 1.set up tables
     -Users (username & password)
     -Articles(Title, Author, Img, Rank, Summary, Category)
+    -savedArticles (user_id, article_id)
 2.Authentication Endpoints
     -signup
     -login
