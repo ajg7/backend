@@ -5,7 +5,7 @@ module.exports = {
     findBy
 }
 
-const db = require("../database/dbConfig");
+const db = require("../database/config");
 
 function findById(id) {
     return db("users").where({ id }).first();
