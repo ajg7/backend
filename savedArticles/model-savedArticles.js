@@ -1,5 +1,6 @@
 module.exports = {
     find,
+    findById,
     add, 
     remove
 }
@@ -19,7 +20,6 @@ function add(userId, articleId) {
     return db("savedArticles")
             .insert({user_id: userId, article_id: articleId})
             .then(ids => {
-                console.log(ids)
                 const id = ids[0];
                 return findById(id)
             })

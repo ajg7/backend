@@ -11,6 +11,17 @@ router.get("/", (request, response) => {
         })
 })
 
+router.get("/:id", (request, response) => {
+    const { id } = request.params;
+    SavedArticles.findById(id)
+        .then(article => {
+            response.status(200).json(article)
+        })
+        .catch(error => {
+            response.status(500).json({message: error.message})
+        })
+})
+
 router.post("/:articleId", (request, response) => {
     console.log(request.jwt.userId)
     const userId = request.jwt.userId;
