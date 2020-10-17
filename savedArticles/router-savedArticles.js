@@ -37,17 +37,17 @@ router.post("/:articleId", (request, response) => {
 })
 
 router.delete("/:id", (request, response) => {
-    const { id } = request.body;
+    const { id } = request.params;
     SavedArticles.remove(id)
         .then(savedArticleToBeDel => {
             if (savedArticleToBeDel) {
                 response.json({ removed: savedArticleToBeDel });
             } else {
-                response.status(404).json({ message: 'Could not find scheme with given id' });
+                response.status(404).json({ message: 'Could not find article' });
             }
         })
         .catch(error => {
-            response.status(500).json({ message: 'Failed to delete scheme' });
+            response.status(500).json({ message: 'Failed to delete' });
         });
 })
 
