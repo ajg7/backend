@@ -11,7 +11,7 @@ exports.up = function(knex) {
                 .notNullable()
         })
         .createTable("articles", table => {
-            table.incremets();
+            table.increments();
             table.string("title")
                 .notNullable()
                 .unique()
@@ -25,8 +25,6 @@ exports.up = function(knex) {
                 .notNullable()
             table.integer("rank")
                 .notNullable()
-                .min(1)
-                .max(5)
         })
         .createTable("savedArticles", table => {
             table.integer('user_id')
