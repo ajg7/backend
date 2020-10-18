@@ -54,7 +54,7 @@ Returns the *article with corresponding id*
 
 Returns the *id* and *changes*
 
-All keys in article object except id can be changed
+All values in article object except id can be changed
 
 ## Saved Articles
 
