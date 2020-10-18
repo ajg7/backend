@@ -8,8 +8,6 @@ Deployment url: "https://pintereach-backend-ajg.herokuapp.com/"
 
 This creates a new user in the database, and returns both the *user object* and *user id*
 
-Table:
-
 | Name     | Requried | Type   | Unique?   | Description                  |
 |----------|----------|--------|-----------|------------------------------|
 | username |   yes    | string |     yes   | the username of the user     |
