@@ -4,4 +4,4 @@
 
 [] Make a Readme file
 
-[] Deploy to Heroku
+Deployment url: "https://pintereach-backend-ajg.herokuapp.com/"
