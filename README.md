@@ -40,7 +40,7 @@ Article Object:
 | Summary  | String  | Short summary of the article in Lorem Ipsum      |
 | Image    | String  | Link to Randomly Generated Image on Lorem Picsum |
 | Category | String  | Category name of the article                     |
-| Rank     | Integer | Ranking between 1-5, 1 being the lowest          |
+| Rank     | Integer | Ranking between 1-5; 1 being the lowest          |
 
 ### GET /articles/:id
 
