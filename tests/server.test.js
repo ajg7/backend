@@ -16,6 +16,8 @@ const editedArticle = {
     rank: randomNum
 }
 
+const savedArticleToBeDel = 3;
+
 describe("server", () => {
     describe("GET", () => {
         it("should receive body with Frankenstein as key", () => {
@@ -49,7 +51,7 @@ describe("server", () => {
             })
         })
         it("can delete saved articles", () => {
-            return supertest(server).delete("/saved_articles/3").set("Authorization", token).then(response => {
+            return supertest(server).delete(`/saved_articles/${savedArticleToBeDel}`).set("Authorization", token).then(response => {
                 expect(response.status).toBe(200)
             })
         })
