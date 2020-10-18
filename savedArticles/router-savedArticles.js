@@ -41,7 +41,7 @@ router.delete("/:id", (request, response) => {
     SavedArticles.remove(id)
         .then(savedArticleToBeDel => {
             if (savedArticleToBeDel) {
-                response.json({ removed: savedArticleToBeDel });
+                response.json({ removed: id });
             } else {
                 response.status(404).json({ message: 'Could not find article' });
             }
