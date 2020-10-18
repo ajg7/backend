@@ -8,7 +8,7 @@ router.get("/", (request, response) => {
             response.status(200).json({data: articles})
         })
         .catch(error => {
-            response.status(500).json({message: error.message})
+            response.status(401).json({message: error.message})
         })
 })
 
