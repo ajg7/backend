@@ -33,6 +33,7 @@ Returns a list of all articles
 Article Object:
 
 | Name     | Type    | Description                                      |
+|----------|---------|--------------------------------------------------|
 | Id       | Integer | Autoincremented Id                               |
 | Title    | String  | Name of the article                              |
 | Author   | String  | Author of the article                            |
@@ -46,6 +47,7 @@ Article Object:
 Returns the *article with corresponding id*
 
 | Name      | Requried | Type          | Unique?   | Description           |
+|-----------|----------|---------------|-----------|-----------------------|
 | articleId |    yes   | URL Parameter |   yes     | The Id of the article |
 
 ### PUT /articles/:id
@@ -65,6 +67,7 @@ Returns the Article Ids and the Id of the User, who saved it
 Saved Articles Object:
 
 | Name       | Type    | Description                                      |
+|------------|---------|--------------------------------------------------|
 | Id         | Integer | Autoincremented Id                               |
 | user_id    | Integer | Id of the specific user who liked the article    |
 | article_id | Integer | Id of the article that was liked                 |
@@ -74,6 +77,7 @@ Saved Articles Object:
 Returns Saved Article with the corresponding id
 
 | Name      | Requried | Type          | Unique?   | Description                 |
+|-----------|----------|---------------|-----------|-----------------------------|
 | id        |    yes   | URL Parameter |   yes     | The Id of the saved article |
 
 ### POST /:articleId
@@ -81,6 +85,7 @@ Returns Saved Article with the corresponding id
 Returns object with the *current user's id (user_id)* and *article_id*
 
 | Name             | Requried | Type          | Unique?   | Description                                 |
+|------------------|----------|---------------|-----------|---------------------------------------------|
 | articleId        |    yes   | URL Parameter |   yes     | The id of the article that you want to save |
 
 ### DELETE /:id
@@ -88,4 +93,5 @@ Returns object with the *current user's id (user_id)* and *article_id*
 Returns the id of the deleted saved article
 
 | Name      | Requried | Type          | Unique?   | Description                                         |
+|-----------|----------|---------------|-----------|-----------------------------------------------------|
 | id        |    yes   | URL Parameter |   yes     | The Id of the saved article that you want to delete |
