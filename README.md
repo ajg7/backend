@@ -46,7 +46,7 @@ Returns the *article with corresponding id*
 
 | Name      | Requried | Type          | Unique?   | Description           |
 |-----------|----------|---------------|-----------|-----------------------|
-| articleId |    yes   | URL Parameter |   yes     | The Id of the article |
+|    id     |    yes   | URL Parameter |   yes     | The Id of the article |
 
 ### PUT /articles/:id
 
